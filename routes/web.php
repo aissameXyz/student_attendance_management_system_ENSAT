@@ -8,7 +8,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\PagesController;
-
+use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\InfoController;
 use App\Models\User;
 
@@ -32,6 +32,8 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::resource('/modules', ModuleController::class);
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::resource('/roles', RoleController::class);
+    Route::resource('/absence', AbsenceController::class);
+    Route::get('/seance', [AbsenceController::class, 'seance']);
    
     
     Route::delete('/permissions/{permission}/roles/{role}', [PermissionController::class, 'removeRole'])->name('permissions.roles.remove');
@@ -44,22 +46,6 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 });
 
 
-Route::middleware(['auth', 'role:teacher'])->name('teacher2.')->prefix('teacher2')->group(function () {
-    Route::resource('/students', StudentController::class);
-    Route::resource('/teachers', TeacherController::class);
-    Route::resource('/modules', ModuleController::class);
-    Route::get('/', [IndexController::class, 'index'])->name('index');
-    Route::resource('/roles', RoleController::class);
-   
-    
-    Route::delete('/permissions/{permission}/roles/{role}', [PermissionController::class, 'removeRole'])->name('permissions.roles.remove');
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
-    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-    Route::post('/users/{user}/roles', [UserController::class, 'assignRole'])->name('users.roles');
-    Route::delete('/users/{user}/roles/{role}', [UserController::class, 'removeRole'])->name('users.roles.remove');
-    
-});
 
 // Route::get('/test/students' , [PagesController::class, 'students']);
 // Route::get('/test/teachers' , [PagesController::class, 'teachers']);

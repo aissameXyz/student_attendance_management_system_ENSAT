@@ -22,7 +22,9 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{url('admin/modules')}}"">Modules</a>
                 </div>
-             
+                 <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{url('admin/absence')}}">Absence</a>
+                </div>
              
                 
             </div>
@@ -50,6 +52,8 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{url('myinfo', strtolower($user->name) )}}">My Info </a>
                 </div>
+                  
+
               
               
                 
