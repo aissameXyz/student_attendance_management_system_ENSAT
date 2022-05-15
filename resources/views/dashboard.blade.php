@@ -14,13 +14,13 @@
                     You're logged in!
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{url('test/students')}}"">Students</a>
+                    <a href="{{url('admin/students')}}"">Students</a>
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{url('test/teachers')}}"">Teachers</a>
+                    <a href="{{url('admin/teachers')}}"">Teachers</a>
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{url('test/modules')}}"">Modules</a>
+                    <a href="{{url('admin/modules')}}"">Modules</a>
                 </div>
              
              
@@ -45,7 +45,7 @@
                     You're logged in!
                 </div>
               <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{url('test/teachers')}}">Teachers ( just to test permission error ! )</a>
+                    <a href="{{url('admin/teachers')}}">Teachers ( just to test permission error ! )</a>
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{url('myinfo', strtolower($user->name) )}}">My Info </a>

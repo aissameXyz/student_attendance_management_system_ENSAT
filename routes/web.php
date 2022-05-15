@@ -44,9 +44,26 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 });
 
 
-Route::get('/test/students' , [PagesController::class, 'students']);
-Route::get('/test/teachers' , [PagesController::class, 'teachers']);
-Route::get('/test/modules' , [PagesController::class, 'modules']);
+Route::middleware(['auth', 'role:teacher'])->name('teacher2.')->prefix('teacher2')->group(function () {
+    Route::resource('/students', StudentController::class);
+    Route::resource('/teachers', TeacherController::class);
+    Route::resource('/modules', ModuleController::class);
+    Route::get('/', [IndexController::class, 'index'])->name('index');
+    Route::resource('/roles', RoleController::class);
+   
+    
+    Route::delete('/permissions/{permission}/roles/{role}', [PermissionController::class, 'removeRole'])->name('permissions.roles.remove');
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::post('/users/{user}/roles', [UserController::class, 'assignRole'])->name('users.roles');
+    Route::delete('/users/{user}/roles/{role}', [UserController::class, 'removeRole'])->name('users.roles.remove');
+    
+});
+
+// Route::get('/test/students' , [PagesController::class, 'students']);
+// Route::get('/test/teachers' , [PagesController::class, 'teachers']);
+// Route::get('/test/modules' , [PagesController::class, 'modules']);
 
 
 

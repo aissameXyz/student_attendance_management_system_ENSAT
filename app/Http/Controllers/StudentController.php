@@ -20,6 +20,7 @@ class StudentController extends Controller
         return view('student.index')->with('student', $student);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
