@@ -221,7 +221,7 @@ public function store(Request $request)
             $absence->nom = $student->last_name;
             $absence->etat = "absent";
             $absence->seance = $request->seance;
-            // $absence->module = $request->module;
+            $absence->module = $request->module;
             $absence->save();
     if($request->present){
         Absence::where('code',$request->present)->update(['etat' => "present"]);

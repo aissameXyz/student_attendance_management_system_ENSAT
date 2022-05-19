@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('prenom')->nullable();
             $table->string('etat');
             $table->integer('seance');
+            $table->integer('module');
             $table->timestamps();
             // $table->foreign('nom')->references('nom')->on('students');
             // $table->foreign('prenom')->references('prenom')->on('students');

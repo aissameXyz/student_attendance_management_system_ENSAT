@@ -92,5 +92,5 @@
 
 
        <input type="hidden" value="{{ $student->id}}" name="student_id">
- <button type="submit" class="px-4 py-2 btn btn_success">Mark Present !</button>
+ <button type="submit" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-md">Mark Presence !</button>
        </form>
