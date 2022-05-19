@@ -20,13 +20,13 @@
                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                 
                     <div class="flex justify-center p-2">
-                    <a href="{{ url('admin/seance') }}" class="px-4 py-2 btn btn-success">Séance 1</a>
-                    <a href="{{ route('admin.teachers.create') }}" class="px-4 py-2 btn btn-success">Séance 2</a>
-                    <a href="{{ route('admin.teachers.create') }}" class="px-4 py-2 btn btn-success">Séance 3</a>
-                    <a href="{{ route('admin.teachers.create') }}" class="px-4 py-2 btn btn-success">Séance 4</a>
-                    <a href="{{ route('admin.teachers.create') }}" class="px-4 py-2 btn btn-success">Séance 5</a>
-                    <a href="{{ route('admin.teachers.create') }}" class="px-4 py-2 btn btn-success">Séance 6</a>
-                    <a href="{{ route('admin.teachers.create') }}" class="px-4 py-2 btn btn-success">Séance 7</a>
+                    <a href="{{ url('admin/seance/1') }}" class="px-4 py-2 btn btn-success">Séance 1</a>
+                    <a href="{{ url('admin/seance/2') }}" class="px-4 py-2 btn btn-success">Séance 2</a>
+                    <a href="{{ url('admin/seance/3') }}" class="px-4 py-2 btn btn-success">Séance 3</a>
+                    <a href="{{ url('admin/seance/4') }}" class="px-4 py-2 btn btn-success">Séance 4</a>
+                    <a href="{{ url('admin/seance/5') }}" class="px-4 py-2 btn btn-success">Séance 5</a>
+                    <a href="{{ url('admin/seance/6') }}" class="px-4 py-2 btn btn-success">Séance 6</a>
+                    <a href="{{ url('admin/seance/7') }}" class="px-4 py-2 btn btn-success">Séance 7</a>
                 </div>
                             </div>
                         </div>

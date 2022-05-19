@@ -43,7 +43,8 @@ class StudentController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'filiere' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'code' => 'required'
         ]);
 
         // //create post
@@ -52,6 +53,7 @@ class StudentController extends Controller
         $student->last_name = $request->input('last_name');
         $student->filiere = $request->input('filiere');
         $student->email = $request->input('email');
+        $student->code = $request->input('code');
         $student->save();
 
         return to_route('admin.students.index')->with('message', 'Student created.');
@@ -94,7 +96,8 @@ class StudentController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'filiere' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'code' => 'required'
         ]);
 
         // //create post
@@ -103,6 +106,7 @@ class StudentController extends Controller
         $student->last_name = $request->input('last_name');
         $student->filiere = $request->input('filiere');
         $student->email = $request->input('email');
+        $student->code = $request->input('code');
         $student->save();
 
         return to_route('admin.students.index')->with('message', 'Student updated.');

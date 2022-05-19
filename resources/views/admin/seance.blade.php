@@ -34,7 +34,7 @@
                                                 <th >
                                                 Last Name</th>
                                                 <th >
-                                                Présent</th>
+                                                Code Apogée</th>
                                                 <th >
                                                 Absent</th>
                                             
@@ -62,13 +62,23 @@
                                                         {{ $t->last_name }}
                                                     </div>
                                                 </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        {{ $t->code }}
+                                                    </div>
+                                                </td>
                                                 
                                                 <td class="d-flex justify-content-center whitespace-nowrap">
+   <div class="form-check form-switch">
+                                                <input class="form-check-input" name="absent[]" type="checkbox" value="{{ $t->id }}" id="flexSwitchCheckDefault">
+  </div> 
+
+  <input type="hidden" value="{{ $t->id }}" name="ids[]">
   {{-- <div class="form-check form-switch">
   <input class="form-check-input" name="absent[]" type="checkbox" id="flexSwitchCheckDefault">
   
 </div> --}}
-                <div class="form-check form-check-inline">
+                {{-- <div class="form-check form-check-inline">
   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
 
 </div>
@@ -77,7 +87,7 @@
 <div class="form-check form-check-inline">
   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
 
-</div>                                
+</div>                                 --}}
  
                                                 </td>
                                                 
@@ -85,6 +95,7 @@
                                             </tr>
                                             {{-- @endif --}}
                                     @endforeach
+                                    <input type="hidden" value="{{ $seance_id }}" name="seance">
                                       
                                     </tbody>
                                 </table>
