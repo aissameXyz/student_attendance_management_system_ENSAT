@@ -51,7 +51,8 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 // Route::get('/test/modules' , [PagesController::class, 'modules']);
 
 
-Route::get('student/absence}', [AbsenceController::class, 'etudiant']);
+Route::get('student/absence/{user}', [AbsenceController::class, 'etudiant']);
+Route::post('student/absence', [AbsenceController::class, 'presence'])->name("presence");
 Route::get('myinfo/{user}', [InfoController::class, 'info']);
 
 require __DIR__ . '/auth.php';

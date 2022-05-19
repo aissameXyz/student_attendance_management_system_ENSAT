@@ -129,25 +129,25 @@ class AbsenceController extends Controller
 
 public function store(Request $request)
     {
-        $absent=$request->input('absent');
-        $ids=$request->input('ids');
-        $seance_id = $request->seance;
+        // $absent=$request->input('absent');
+        // $ids=$request->input('ids');
+        // $seance_id = $request->seance;
 
-        foreach($ids as $id){
-            $s=Student::find($id);
-            $absence = new absence;
-            $absence->prenom = $s->first_name;
-            $absence->code = $s->code;
-            $absence->nom = $s->last_name;
-            $absence->etat = "présent";
-            $absence->seance = $seance_id;
-            $absence->save();
-            }
+        // foreach($ids as $id){
+        //     $s=Student::find($id);
+        //     $absence = new absence;
+        //     $absence->prenom = $s->first_name;
+        //     $absence->code = $s->code;
+        //     $absence->nom = $s->last_name;
+        //     $absence->etat = "présent";
+        //     $absence->seance = $seance_id;
+        //     $absence->save();
+        //     }
         
-        foreach($absent as $id){
-                $s=Student::find($id);
-                Absence::where('code',$s->code)->update(['etat' => "absent"]);
-            }
+        // foreach($absent as $id){
+        //         $s=Student::find($id);
+        //         Absence::where('code',$s->code)->update(['etat' => "absent"]);
+        //     }
             
 
 
@@ -204,11 +204,36 @@ public function store(Request $request)
         return view('admin.seance')->with('student', $student)->with('seance_id', $seance_id);
     }
 
+    public function presence(Request $request){
 
+        $data=$request->validate([
+            'module'=>'required' ,
+            'seance'=>'required',
+        ]);
 
+        $id = $request->input('student_id');
+     $student=Student::find($id);
+       
 
-    public function etudiant($id)
-    {
-        //
+    $absence = new absence;
+            $absence->prenom = $student->first_name;
+            $absence->code = $student->code;
+            $absence->nom = $student->last_name;
+            $absence->etat = "absent";
+            $absence->seance = $request->seance;
+            // $absence->module = $request->module;
+            $absence->save();
+    if($request->present){
+        Absence::where('code',$request->present)->update(['etat' => "present"]);
+    }
+    
+    return back();
+
+}
+
+    public function etudiant(string $name){
+        
+        $student = student::where('first_name','like',$name)->first();
+        return view('myabsence')->with('student', $student);
     }
 }
