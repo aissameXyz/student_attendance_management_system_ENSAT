@@ -52,7 +52,7 @@ CREATE TABLE `Attendance` (
 -- Dumping data for table `tblattendance`
 --
 
-INSERT INTO `tblattendance` (`Id`, `admissionNo`, `classId`, `classArmId`, `sessionTermId`, `status`, `dateTimeTaken`) VALUES
+INSERT INTO `Attendance` (`Id`, `admissionNo`, `classId`, `classArmId`, `sessionTermId`, `status`, `dateTimeTaken`) VALUES
 (162, 'ASDFLKJ', '1', '2', '1', '1', '2020-11-01'),
 (163, 'HSKSDD', '1', '2', '1', '1', '2020-11-01'),
 (164, 'JSLDKJ', '1', '2', '1', '1', '2020-11-01'),
@@ -144,26 +144,6 @@ INSERT INTO `Enseignant` (`Id`, `firstName`, `lastName`, `emailAddress`, `passwo
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `tblsessionterm`
---
-
-CREATE TABLE `tblsessionterm` (
-  `Id` int(10) NOT NULL,
-  `sessionName` varchar(50) NOT NULL,
-  `termId` varchar(50) NOT NULL,
-  `isActive` varchar(10) NOT NULL,
-  `dateCreated` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblsessionterm`
---
-
-INSERT INTO `tblsessionterm` (`Id`, `sessionName`, `termId`, `isActive`, `dateCreated`) VALUES
-(1, '2019/2020', '1', '1', '2020-10-31'),
-(3, '2019/2020', '2', '0', '2020-10-31');
-
 -- --------------------------------------------------------
 
 --
@@ -206,28 +186,7 @@ INSERT INTO `Etudiant` (`Id`, `firstName`, `lastName`, `otherName`, `admissionNu
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `tblterm`
---
-
-CREATE TABLE `term` (
-  `Id` int(10) NOT NULL,
-  `termName` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblterm`
---
-
-INSERT INTO `term` (`Id`, `termName`) VALUES
-(1, 'First'),
-(2, 'Second'),
-(3, 'Third');
-
---
--- Indexes for dumped tables
---
-
+-
 --
 -- Indexes for table `tbladmin`
 --
@@ -249,8 +208,6 @@ ALTER TABLE `Class`
 --
 -- Indexes for table `tblclassarms`
 --
-ALTER TABLE `tblclassarms`
-  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `tblclassteacher`
@@ -259,29 +216,13 @@ ALTER TABLE `Enseignant`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `tblsessionterm`
---
-ALTER TABLE `term`
-  ADD PRIMARY KEY (`Id`);
-
---
--- Indexes for table `tblstudents`
 --
 ALTER TABLE `Etudiant`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `tblterm`
---
-ALTER TABLE `term`
-  ADD PRIMARY KEY (`Id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `tbladmin`
 --
 ALTER TABLE `Admin`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
@@ -296,30 +237,16 @@ ALTER TABLE `Attendance`
 ALTER TABLE `Class`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `tblclassarms`
---
-ALTER TABLE `tblclassarms`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `tblclassteacher`
 --
 ALTER TABLE `Enseignant`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `tblsessionterm`
---
-ALTER TABLE `tblsessionterm`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `tblstudents`
+-
 --
 ALTER TABLE `Etudiant`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
--- AUTO_INCREMENT for table `tblterm`
---
-ALTER TABLE `term`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
