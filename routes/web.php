@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FiliereController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\FiliereController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
