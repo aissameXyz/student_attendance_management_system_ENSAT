@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,12 +44,14 @@ Route::get('/Student_dashboard', function () {
 })->middleware(['auth', 'Student'])->name('Student_dashboard');
 
 Route::middleware(['auth', 'Admin'])->group(function(){
-    Route::get('/all_stu',function(){
+    // Route::get('/students',function(){
 
-        return view('all_stu');
+    //     return view('student.index');
 
 
-    });
+    // });
+
+    Route::resource('/students', StudentController::class);
 });
 
 
