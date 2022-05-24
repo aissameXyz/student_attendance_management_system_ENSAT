@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FiliereController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,38 +18,58 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return redirect('admin_dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return redirect('admin_dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
 // ADMIN DASHBOARD
-Route::get('/admin_dashboard', function () {
-    return view('Admin');
-})->middleware(['auth', 'Admin'])->name('Admin_dashboard');
+// Route::get('/admin_dashboard', function () {
+//     return view('Admin');
+// })->middleware(['auth', 'Admin'])->name('Admin_dashboard');
 
-// Teacher DASHBOARD
-Route::get('/Teacher_dashboard', function () {
-    return view('Teacher');
-})->middleware(['auth', 'Teacher'])->name('Teacher_dashboard');
-
-
-// Student DASHBOARD
-Route::get('/Student_dashboard', function () {
-    return view('Student');
-})->middleware(['auth', 'Student'])->name('Student_dashboard');
-
-Route::middleware(['auth', 'Admin'])->group(function(){
-    Route::get('/all_stu',function(){
-
-        return view('all_stu');
+// // Teacher DASHBOARD
+// Route::get('/Teacher_dashboard', function () {
+//     return view('Teacher');
+// })->middleware(['auth', 'Teacher'])->name('Teacher_dashboard');
 
 
-    });
-});
+// // Student DASHBOARD
+// Route::get('/Student_dashboard', function () {
+//     return view('Student');
+// })->middleware(['auth', 'Student'])->name('Student_dashboard');
+
+// Route::middleware(['auth', 'Admin'])->group(function(){
+//     Route::get('/all_stu',function(){
+
+//         return view('all_stu');
+
+
+//     });
+// });
+
+Route::resource('Filieres',FiliereController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
