@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-</head>
+
+<x-app-layout>
+
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Create teacher
+        </h2>
+    </x-slot>
+
+<style>
+  body {
+
+
+
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align:center;
+  margin:auto;
+  padding:0;
+
+}
+</style>
+
 <body>
     <h1>liste des filieres</h1>
     @if($message = Session::get('success'))
@@ -27,10 +43,16 @@
       <td>{{$filiere->id}}</td>
       <td>{{$filiere->Designation}}</td>
       <td>{{$filiere->teacher_id}}</td>
-      <td><a href="{{route('Filieres.show', $filiere->id)}}">afficher {{$filiere->Designation}}</a></td>
+      <td><a href="{{route('Filieres.edit',$filiere->id)}}" >Modifier {{$filiere->Designation}}</a>
+      <form action="{{route('Filieres.destroy',$filiere->id)}}" method="POST">
+          @csrf
+          @method('DELETE')
+          <input type="submit" value="suprimer {{$filiere->Designation}}">
+      </form></td>
     </tr>
     @endforeach
   </tbody>
 </table>
 </body>
-</html>
+
+</x-app-layout>

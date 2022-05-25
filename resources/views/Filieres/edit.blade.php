@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-</head>
+
+<x-app-layout>
+
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Create teacher
+        </h2>
+    </x-slot>
+
+<style>
+  body {
+
+
+
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align:center;
+  margin:auto;
+  padding:0;
+
+}
+</style>
+
 <body>
     <h1>Editer la filiere</h1>
     @if($errors->any())
@@ -32,5 +48,4 @@
 
   <button type="submit" value="Modifier la filiere" class="btn btn-primary">Submit</button>
 </form>
-</body>
-</html>
+</x-app-layout>
