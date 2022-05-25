@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Filiere;
 use Illuminate\Http\Request;
 
+
 class FiliereController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class FiliereController extends Controller
      */
     public function index()
     {
-        //
+        $filieres = Filiere::all();
+        return view('Filieres.index', compact('filieres'));
     }
 
     /**
@@ -24,7 +26,7 @@ class FiliereController extends Controller
      */
     public function create()
     {
-        //
+       return view('Filieres.create');
     }
 
     /**
@@ -35,7 +37,17 @@ class FiliereController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Designation' => 'required',
+            'teacher_id' => 'required'
+        ]);
+
+        $filiere = new Filiere;
+        $filiere->Designation = $request->Designation;
+        $filiere->teacher_id = $request->teacher_id;
+        $filiere->save();
+
+        return redirect()->route('Filieres.index');
     }
 
     /**
@@ -44,9 +56,10 @@ class FiliereController extends Controller
      * @param  \App\Models\Filiere  $filiere
      * @return \Illuminate\Http\Response
      */
-    public function show(Filiere $filiere)
+    public function show($id)
     {
-        //
+        $filiere = Filiere::findOrFail($id);
+        return view('Filieres.show' , compact('filiere'));
     }
 
     /**
@@ -55,9 +68,10 @@ class FiliereController extends Controller
      * @param  \App\Models\Filiere  $filiere
      * @return \Illuminate\Http\Response
      */
-    public function edit(Filiere $filiere)
+    public function edit($id)
     {
-        //
+        $filiere = Filiere::findOrFail($id);
+        return view('Filieres.edit', compact('filiere'));
     }
 
     /**
@@ -67,9 +81,20 @@ class FiliereController extends Controller
      * @param  \App\Models\Filiere  $filiere
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Filiere $filiere)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'Designation' => 'required',
+            'teacher_id' => 'required'
+        ]);
+
+        $filiere = Filiere::find($id);
+        $filiere->Designation = $request->Designation;
+        $filiere->teacher_id = $request->teacher_id;
+
+        $filiere->save();
+
+        return redirect()->route('Filieres.index');
     }
 
     /**
@@ -78,8 +103,11 @@ class FiliereController extends Controller
      * @param  \App\Models\Filiere  $filiere
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Filiere $filiere)
+    public function destroy($id)
     {
-        //
+        Filiere::find($id)->delete();
+        return redirect()
+        ->route('Filieres.index')
+        ->with('success','Filiere suprimee');
     }
 }

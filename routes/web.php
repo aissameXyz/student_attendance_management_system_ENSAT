@@ -51,7 +51,8 @@ Route::middleware(['auth', 'Admin'])->group(function(){
 
 
     // });
-
+    Route::resource('/Filieres',FiliereController::class);
+    Route::resource('/teacher', TeacherController::class);
     Route::resource('/students', StudentController::class);
 });
 
