@@ -14,6 +14,12 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                 <a href="{{url('students')}}"> All Students </a> 
                 </div>
+                                <div class="p-6 bg-white border-b border-gray-200">
+                                <a href="{{url('teacher')}}">All Teachers</a>
+                </div>
+                        <div class="p-6 bg-white border-b border-gray-200">
+                                <a href="{{url('Filieres')}}">Filieres</a>
+                </div>
             </div>
         </div>
     </div>

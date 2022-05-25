@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\FiliereController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +52,8 @@ Route::middleware(['auth', 'Admin'])->group(function(){
 
 
     // });
-
+    Route::resource('/Filieres',FiliereController::class);
+    Route::resource('/teacher', TeacherController::class);
     Route::resource('/students', StudentController::class);
 });
 

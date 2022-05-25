@@ -47,15 +47,17 @@ class StudentController extends Controller
             'filiere_Id' => 'required'
         ]);
 
-       
         $student = new student;
         $student->firstName = $request->input('firstName');
         $student->lastName = $request->input('lastName');
         $student->code_ap = $request->input('code_ap');
         $student->admissionNumber = $request->input('admissionNumber');
         $student->filiere_Id = $request->input('filiere_Id');
+
         $user_id = user::where('name','like',$request->input('firstName'))->first()->id;
         $student->user_Id = $user_id;
+
+
         $student->save();
 
         return to_route('students.index');

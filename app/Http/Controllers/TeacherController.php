@@ -14,7 +14,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        $teacher=teacher::all();
+        return view('teacher\index',compact('teacher'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('teacher\create');
     }
 
     /**
@@ -35,16 +36,21 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $resp = new teacher;
+        $resp->firstName =$request->firstName;
+        $resp->lastName =$request->lastName;
+        $resp->user_id =$request->user_id;
+        $resp->save();
+        return redirect()->back()->with('status','responsable added successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Teacher $teacher)
+    public function show($id)
     {
         //
     }
@@ -52,34 +58,44 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function edit($id)
     {
-        //
+        $teacher = teacher::findorfail($id);
+
+        return view('teacher\edit' , compact('teacher'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Teacher  $teacher
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teacher $teacher)
+
+    public function update(Request $request, $id)
     {
-        //
+        $resp = teacher::findorfail($id);
+        $resp->firstName =$request->firstName;
+        $resp->lastName =$request->lastName;
+        $resp->user_id =$request->user_id;
+        $resp->update();
+        return redirect()->back()->with('status','responsable updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teacher $teacher)
+    public function destroy($id)
     {
-        //
+        $resp = teacher::findorfail($id);
+        $resp->delete();
+        return redirect()->back()->with('status','responsable deleted successfully');
     }
 }
