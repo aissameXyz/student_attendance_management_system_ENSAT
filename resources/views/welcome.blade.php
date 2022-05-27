@@ -116,7 +116,7 @@
                         </div>
                     </div>
                     <div class="col-md-4"><a href="" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
-                        <div class="imgRedonda"><img class="imgpeque" src="assets/img/WhatsApp%20Image%202022-05-24%20at%2021.59.46.jpeg"></div>
+                        <div class="imgRedonda"><img class="imgpeque" src="assets/img/bilal.jpeg"></div>
                         <h1 class="text-center" style="font-size: 32.52px;">Bilal</h1>
                         <p>Moroccan software engineer student , interested in the IT world and science in general , especially mathematics , project-conception and problem-solving .<br></p>
                         <div class="row">

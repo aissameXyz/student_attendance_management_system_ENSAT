@@ -3,8 +3,6 @@
     <x-slot name="header">
     </x-slot>
 
-
-
     <div class="container-sm">
         <form class="row g-3 needs-validation" novalidate method="POST" action="{{ url('teacher') }}">
             @csrf
@@ -27,8 +25,6 @@
                 <input type="text" id="name" name="user_id"  class="form-control" required>
                 @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
             </div>
-
-
             <div class="col-12">
                 <a class="btn btn-primary" type="submit" href="{{ route('teacher.index') }}">Back</a>
                 <button class="btn btn-primary" type="submit">Create</button>

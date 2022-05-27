@@ -3,6 +3,7 @@
 
     </x-slot>
     <body style="background-color: var(--bs-gray-200) " >
+        test
 
     </body>
 
