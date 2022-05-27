@@ -109,6 +109,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $this->validate($request, [
             'firstName' => 'required',
             'lastName' => 'required',

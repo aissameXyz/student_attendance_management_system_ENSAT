@@ -55,6 +55,18 @@
                             </div>
                             @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
                           </div>
+                          <div class="sm:col-span-6">
+                            <label for="name" class="block text-sm font-medium text-gray-700"> Module </label>
+                            <div class="mt-1">
+                              <select name="module_id" class="form-select btn btn-secondary px-6 ">
+
+
+@foreach($module as $fil)
+    <option value="{{$fil->id}}">{{$fil->designation}}</option>
+@endforeach
+    </select>
+                            </div>
+                            </div>
 
                           
 

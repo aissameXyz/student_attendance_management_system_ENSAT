@@ -39,14 +39,13 @@ class FiliereController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'Designation' => 'required',
-            'teacher_id' => 'required'
+            'Designation' => 'required'
         ]);
 
-        $id= Teacher::find($request->teacher_id)->id;
+        // $id= Teacher::find($request->teacher_id)->id;
         $filiere = new Filiere;
         $filiere->Designation = $request->Designation;
-        $filiere->teacher_id = $id;
+        // $filiere->teacher_id = $id;
         $filiere->save();
         return redirect()->route('Filieres.index');
     }
@@ -85,13 +84,13 @@ class FiliereController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'Designation' => 'required',
-            'teacher_id' => 'required'
+            'Designation' => 'required'
+     
         ]);
 
         $filiere = Filiere::find($id);
         $filiere->Designation = $request->Designation;
-        $filiere->teacher_id = $request->teacher_id;
+        // $filiere->teacher_id = $request->teacher_id;
 
         $filiere->save();
 

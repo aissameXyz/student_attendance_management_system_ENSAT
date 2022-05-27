@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use App\Models\Module;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -25,7 +26,8 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('teacher\create');
+        $module=Module::all();
+        return view('teacher\create',compact('module'));
     }
 
     /**
@@ -40,6 +42,7 @@ class TeacherController extends Controller
         $resp->firstName =$request->firstName;
         $resp->lastName =$request->lastName;
         $resp->user_id =$request->user_id;
+        $resp->module_id =$request->module_id;
         $resp->save();
         return redirect()->back()->with('status','responsable added successfully');
     }
@@ -64,8 +67,10 @@ class TeacherController extends Controller
     public function edit($id)
     {
         $teacher = teacher::findorfail($id);
+        $module=Module::all();
+        
 
-        return view('teacher\edit' , compact('teacher'));
+        return view('teacher\edit' , compact('teacher','module'));
     }
 
     /**
@@ -84,7 +89,7 @@ class TeacherController extends Controller
         $resp->user_id =$request->user_id;
         $resp->update();
         return redirect()->back()->with('status','responsable updated successfully');
-    }
+        }
 
     /**
      * Remove the specified resource from storage.

@@ -41,10 +41,10 @@
     <input type="text" name="Designation" value="{{$filiere->Designation}}" class="form-control" id="Designation" aria-describedby="emailHelp" placeholder="Designation">
   </div>
 
-  <div class="form-group">
+  {{-- <div class="form-group">
     <label for="teacher_id">Teacher_id</label>
     <input type="text" name="teacher_id" value="{{$filiere->teacher_id}}" class="form-control" id="teacher_id" placeholder="Password">
-  </div>
+  </div> --}}
 
   <button type="submit" value="Modifier la filiere" class="btn btn-primary">Submit</button>
 </form>
