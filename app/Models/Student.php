@@ -10,5 +10,4 @@ class Student extends Model
     use HasFactory;
 
 
-    
 }

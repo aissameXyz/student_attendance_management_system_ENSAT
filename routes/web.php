@@ -45,15 +45,14 @@ Route::get('/Student_dashboard', function () {
 })->middleware(['auth', 'Student'])->name('Student_dashboard');
 
 Route::middleware(['auth', 'Admin'])->group(function(){
-    // Route::get('/students',function(){
-
-    //     return view('student.index');
-
-
-    // });
     Route::resource('/Filieres',FiliereController::class);
     Route::resource('/teacher', TeacherController::class);
     Route::resource('/students', StudentController::class);
+});
+
+
+Route::middleware(['auth', 'Student'])->group(function(){
+    Route::get('myInfo',[StudentController::class,'myInfo'])->name('myInfo');
 });
 
 

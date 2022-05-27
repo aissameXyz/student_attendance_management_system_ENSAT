@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -53,8 +53,7 @@ class StudentController extends Controller
         $student->code_ap = $request->input('code_ap');
         $student->admissionNumber = $request->input('admissionNumber');
         $student->filiere_Id = $request->input('filiere_Id');
-
-        $user_id = user::where('name','like',$request->input('firstName'))->first()->id;
+        $user_id = user::where('name','=',$request->input('firstName'))->first()->id;        
         $student->user_Id = $user_id;
 
 
@@ -128,5 +127,12 @@ class StudentController extends Controller
         $student->delete();
 
         return back()->with('message', 'Student deleted.');
+    }
+
+    public function myInfo(){
+                
+        $st = Student::where('user_id','like',Auth::User()->id)->first();     
+        return view('myInfo',compact('st'));
+
     }
 }
