@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Student;
-use App\Models\Absence;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
-
+use App\Models\Student;
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Models\filiere;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -17,7 +15,11 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    public function index()
+    {
+        $student = Student::all();
+        return view('student.index',compact('student'));
+    }
 
     public function absence()
     {
@@ -39,7 +41,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $filiere = filiere::all();
+        return view('student.create')->with('filiere',$filiere);
     }
 
     /**
@@ -50,7 +53,27 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'lastName' => 'required',
+            'firstName' => 'required',
+            'code_ap' => 'required',
+            'admissionNumber' => 'required',
+            'filiere_Id' => 'required'
+        ]);
+
+        $student = new student;
+        $student->firstName = $request->input('firstName');
+        $student->lastName = $request->input('lastName');
+        $student->code_ap = $request->input('code_ap');
+        $student->admissionNumber = $request->input('admissionNumber');
+        $student->filiere_Id = $request->input('filiere_Id');
+        $user_id = user::where('name','=',$request->input('firstName'))->first()->id;
+        $student->user_Id = $user_id;
+
+
+        $student->save();
+
+        return to_route('students.index');
     }
 
     /**
@@ -70,11 +93,13 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit($id)
     {
-        //
+        $filiere = filiere::all();
+        $student = student::find($id);
+        return view('student.edit',compact('student'))->with('filiere',$filiere);
     }
-
+    // to_route('students.edit')->with('student', $student);
     /**
      * Update the specified resource in storage.
      *
@@ -82,9 +107,26 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'code_ap' => 'required',
+            'admissionNumber' => 'required',
+            'filiere_Id' => 'required'
+        ]);
+
+        // //create post
+        $student = student::find($id);
+        $student->firstName = $request->input('firstName');
+        $student->lastName= $request->input('lastName');
+        $student->code_ap = $request->input('code_ap');
+        $student->admissionNumber = $request->input('admissionNumber');
+        $student->filiere_Id = $request->input('filiere_Id');
+        $student->save();
+
+        return redirect()->back()->with('message', 'Student updated.');
     }
 
     /**
@@ -93,8 +135,18 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        //
+        $student = student::find($id);
+        $student->delete();
+
+        return back()->with('message', 'Student deleted.');
+    }
+
+    public function myInfo(){
+
+        $st = Student::where('user_id','like',Auth::User()->id)->first();
+        return view('myInfo',compact('st'));
+
     }
 }

@@ -119,8 +119,7 @@ class AbsenceController extends Controller
         event(new SeanceStartingEvent($teacher,$seance_id));
 
         //return view('teacher.seance')->with('seance_id', $seance_id)->with('absences',[]);
-        return redirect()->route('teacher.seance',['id'=>$seance_id])
-            ->with('seance_id', $seance_id);
+        return $this->seanceSheet($id);
     }
 
     public function seanceEnd($id)

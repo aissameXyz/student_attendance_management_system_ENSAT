@@ -22,6 +22,7 @@ class AdminSeeder extends Seeder
 
 
        User::create([
+           'name' => 'admin',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -29,6 +30,7 @@ class AdminSeeder extends Seeder
            ]);
 
         User::create([
+            'name' => 'Amechnoue',
             'email' => 'kamechnoue@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -36,6 +38,7 @@ class AdminSeeder extends Seeder
         ]);
 
         User::create([
+            'name' => 'Maouen',
             'email' => 'Maouen@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -43,42 +46,49 @@ class AdminSeeder extends Seeder
         ]);
 
         User::create([
+            'name' => 'amami',
             'email' => 'amamiyassir@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role'=>'Student',
         ]);
         User::create([
+            'name' => 'atyq',
             'email' => 'amineatyq@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role'=>'Student',
         ]);
         User::create([
+            'name' => 'abassi',
             'email' => 'abassiyasser@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role'=>'Student',
         ]);
         User::create([
+            'name' => 'belkentaoui',
             'email' => 'belkentaouiomar@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role'=>'Student',
         ]);
         User::create([
+            'name' => 'amaati',
             'email' => 'amaatizakaria@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role'=>'Student',
         ]);
         User::create([
+            'name' => 'mesaouiri',
             'email' => 'mesaouiribilal@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role'=>'Student',
         ]);
         User::create([
+            'name' => 'khabar',
             'email' => 'khabarachraf@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
