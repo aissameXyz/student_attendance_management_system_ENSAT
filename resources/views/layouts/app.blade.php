@@ -18,6 +18,12 @@
         <link rel="stylesheet" href="{{asset('assets/css/Navigation-with-Button.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/Sakae-Simple-Section.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/Table-With-Search-1.css">
+        <link rel="stylesheet" href="assets/css/Table-With-Search.css">
+
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
@@ -36,8 +42,7 @@
                 {{ $slot }}
             </main>
         </div>
-        <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('assets/js/bs-init.js')}}"></script>
-        <script src="{{url('https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js')}}"></script>
     </body>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/Table-With-Search.js"></script>
 </html>

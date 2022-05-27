@@ -1,105 +1,61 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            teachers
-        </h2>
     </x-slot>
+    <body style="background-color: var(--bs-gray-200) ">
+    <div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
+        <center>
+            <a class="btn action-button" style="background: var(--bs-red); color: white" role="button"  href="{{route('teacher.create')}}">
+                Create Teacher
+            </a>
+        </center>
+        <br><br>
+        <div class="table-responsive table table-hover table-bordered results">
+            <table class="table table-hover table-bordered">
+                <thead class="bill-header cs">
+                <tr>
+                    <th id="trs-hd-1" class="col-lg-1">First Name</th>
+                    <th id="trs-hd-2" class="col-lg-2">Last Name</th>
+                    <th id="trs-hd-3" class="col-lg-3">teacher id</th>
+                    <th id="trs-hd-4" class="col-lg-2">Edit</th>
+                </tr>
+                </thead>
 
-<style>
-  body {
-
-
-
-  background-size: cover; /* or contain depending on what you want */
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align:center;
-  margin:auto;
-  padding:0;
-
-}
-</style>
-
-
-<center>
-
-
-<div class="py-12 w-full">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2">
-    <div class="flex justify-end p-2">
-                <a href="{{url('teacher/create')}}"
-                    class="px-4 py-2 btn btn-success">Create teacher</a>
-            </div> <div class="py-12 w-full">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2">
-                    <div class="flex flex-col">
-                        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                    <table class="table">
-                                        <thead class="bg-gray-50">
-                                            <tr>
-                                                <th class="col">
-                                                    First Name</th>
-                                                <th>
-                                                    Last Name</th>
-                                                <th>
-                                                    teacher id</th>
-                                          
-                                                <th>
-                                                    Edit
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($teacher as $t)
-                                            <tr>
-                                                <td >
-                                                    <div class="flex items-center">
-                                                        {{ $t->firstName }}
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="flex items-center">
-                                                        {{ $t->lastName }}
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="flex items-center">
-                                                        {{ $t->user_id }}
-                                                    </div>
-                                                </td>
-                                            
-                                                <td>
-                                                    <div class="flex justify-end">
-                                                        <div class="flex space-x-2">
-                                   
-                                                            <a href="{{ url('teacher/'.$t->id.'/edit')}}"
-                                                                class="px-4   btn btn-primary ">Update</a>
-                                                            <form class="px-4 py-2 btn btn-danger" method="POST"
-                                                                action="{{ route('teacher.destroy', $t->id) }}"
-                                                                onsubmit="return confirm('Are you sure?');">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button class="px-4 py-2 btn btn-danger" type="submit">Delete</button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+                <tbody>
+                @foreach ($teacher as $t)
+                    <tr class="warning no-result">
+                        <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
+                    </tr>
+                    <tr>
+                        <td>{{ $t->firstName }}</td>
+                        <td>{{ $t->lastName }}</td>
+                        <td>{{ $t->user_id }}</td>
+                        <td>
+                            <form class="px-4 py-2" method="POST" action="{{ route('teacher.destroy', $t->id) }}" onsubmit="return confirm('Are you sure?');">
+                                <a href="{{ url('teacher/'.$t->id.'/edit')}}" class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></a>
+                                @csrf
+                                @method('DELETE')
+                                <script>
+                                    function ConfirmDelete() {return confirm("Are you sure you want to delete?");}
+                                </script>
+                                <button Onclick="return ConfirmDelete();" class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
+    </div>
+    </body>
+
+
+
+
+
+
+
+
 
         </x-app-layout>
 

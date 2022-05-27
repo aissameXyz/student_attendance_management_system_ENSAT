@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: var(--bs-gray-200)">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                <img src="assets/img/logoLAravel.png" width="80px">
+                <img src="/assets/img/logoLAravel.png" width="80px">
         </a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
@@ -30,7 +30,6 @@
 
                                     </form>
                                 </ul>
-
                             @else
                                 <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="background: var(--bs-red);">Log in</a>
                                 @if (Route::has('register'))

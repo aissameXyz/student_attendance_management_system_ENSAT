@@ -1,28 +1,72 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Student Update
-        </h2>
     </x-slot>
 
-<style>
-  body {
+    <div class="container-sm">
+        <form class="row g-3 needs-validation" novalidate method="POST" action="{{ url('students/'.$student->id) }}">
+            @csrf
+            @method('PUT')
+
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Code Apogée</label>
+                <input id="name" name="code_ap" type="text" class="form-control" required>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">First name </label>
+                <input id="name" name="firstName" type="text" class="form-control" required>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Last name</label>
+                <div class="input-group has-validation">
+                    <input id="name" name="admissionNumber" type="text" class="form-control" aria-describedby="inputGroupPrepend" required>
+                </div>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustom03" class="form-label">Admission Number </label>
+                <input type="text" class="form-control" id="validationCustom03" required>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Filiere</label>
+                <select name="filiere_Id" class="form-select" id="validationCustom04" required>
+                    <option selected disabled value="">Choose...</option>
+                    @foreach($filiere as $fil)
+                        <option value="{{$fil->id}}">{{$fil->Designation}}</option>
+                    @endforeach
+                </select>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="col-12">
+                <a class="btn btn-primary" type="submit" href="{{ route('students.index') }}">Back</a>
+                <button class="btn btn-primary" type="submit">update</button>
+            </div>
+        </form>
+    </div>
 
 
 
-  background-size: cover; /* or contain depending on what you want */
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align:center;
-  margin:auto;
-  padding:0;
 
-}
-</style>
 
-<center>
-    <div class="py-12 w-full">
+
+
+
+
+
+
+
+
+
+
+{{--    <div class="py-12 w-full">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2">
                 <div class="flex p-2">
@@ -80,11 +124,10 @@
                           </div>
                         </form>
                       </div>
-                      
+
                 </div>
-  
+
             </div>
         </div>
-    </div>
-
+    </div>--}}
       </x-app-layout>

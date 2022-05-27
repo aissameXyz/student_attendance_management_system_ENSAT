@@ -1,29 +1,38 @@
 
 <x-app-layout>
 
-<x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Create teacher
-        </h2>
+    <x-slot name="header">
     </x-slot>
 
-<style>
-  body {
+    <div class="container-sm">
+        <form class="row g-3 needs-validation" novalidate method="POST" action="{{route('Filieres.store')}}">
+            @csrf
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Designation de la filiere</label>
+                <input id="Designation" name="Designation" type="text" class="form-control" required>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Teacher_id</label>
+                <input id="teacher_id" name="teacher_id" type="text" class="form-control" required>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+            <div class="col-12">
+                <a class="btn btn-primary" type="submit" href="/Filieres">Back</a>
+                <button class="btn btn-primary" type="submit">Create</button>
+            </div>
+        </form>
+    </div>
 
 
 
-  background-size: cover; /* or contain depending on what you want */
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align:center;
-  margin:auto;
-  padding:0;
-
-}
-</style>
 
 
-<body>
+
+
+
+
+{{--<body>
     <h1>CREATE Filiere</h1>
     @if($errors->any())
     <div class="alert alert-danger">
@@ -48,7 +57,7 @@
 
   <button type="submit" value="creer une filiere" class="btn btn-primary">Submit</button>
 </form>
-</body>
+</body>--}}
 
 
 </x-app-layout>

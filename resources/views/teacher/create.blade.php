@@ -1,28 +1,47 @@
 <x-app-layout>
 
-<x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Create teacher
-        </h2>
+    <x-slot name="header">
     </x-slot>
 
-<style>
-  body {
+
+
+    <div class="container-sm">
+        <form class="row g-3 needs-validation" novalidate method="POST" action="{{ url('teacher') }}">
+            @csrf
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">First name </label>
+                <input id="name" name="firstName" type="text" class="form-control" required>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Last name</label>
+                <div class="input-group has-validation">
+                    <input id="name" name="lastName" type="text" class="form-control" aria-describedby="inputGroupPrepend" required>
+                </div>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustom03" class="form-label">Teacher id</label>
+                <input type="text" id="name" name="user_id"  class="form-control" required>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+
+            <div class="col-12">
+                <a class="btn btn-primary" type="submit" href="{{ route('teacher.index') }}">Back</a>
+                <button class="btn btn-primary" type="submit">Create</button>
+            </div>
+        </form>
+    </div>
 
 
 
-  background-size: cover; /* or contain depending on what you want */
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align:center;
-  margin:auto;
-  padding:0;
-
-}
-</style>
 
 
-<center>
+
+{{--
 <div class="py-12 w-full">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2">
@@ -33,7 +52,7 @@
                     <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
                         <form method="POST"class="px-4 py-2 btn " action="{{ url('teacher') }}">
                             @csrf
-                            
+
                           <div class="sm:col-span-6">
                             <label for="name" class="block text-sm font-medium text-gray-700"> First name </label>
                             <div class="mt-1">
@@ -56,23 +75,23 @@
                             @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
                           </div>
 
-                          
 
-                          
-                    
+
+
+
                           <div class="sm:col-span-6 pt-5">
                             <button type="submit" class="px-4 py-2 btn btn-success">Create</button>
                           </div>
                         </form>
                       </div>
-                      
+
                 </div>
-  
+
             </div>
         </div>
     </div>
 
-</center>
+</center>--}}
 
-    
+
 </x-app-layout>

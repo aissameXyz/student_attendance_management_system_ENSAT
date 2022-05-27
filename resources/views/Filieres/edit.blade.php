@@ -1,26 +1,42 @@
 
 <x-app-layout>
 
-<x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Create teacher
-        </h2>
+    <x-slot name="header">
     </x-slot>
 
-<style>
-  body {
+    <div class="container-sm">
+        <form class="row g-3 needs-validation" novalidate method="POST" action="{{route('Filieres.update' , $filiere->id)}}">
+            @csrf
+            @method('PATCH')
+
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Designation de la filiere</label>
+                <input name="Designation" type="text" class="form-control" value="{{$filiere->Designation}}" required id="Designation" aria-describedby="emailHelp" placeholder="Designation">
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Teacher_id</label>
+                <input name="teacher_id" value="{{$filiere->teacher_id}}" id="name" type="text" class="form-control" required>
+                @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+            </div>
+
+
+            <div class="col-12">
+                <a class="btn btn-primary" type="submit" href="{{ route('Filieres.index') }}">Back</a>
+                <button class="btn btn-primary" type="submit">update</button>
+            </div>
+        </form>
+    </div>
 
 
 
-  background-size: cover; /* or contain depending on what you want */
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align:center;
-  margin:auto;
-  padding:0;
 
-}
-</style>
+
+
+
+{{--
+
 
 <body>
     <h1>Editer la filiere</h1>
@@ -36,6 +52,7 @@
     <form action="{{route('Filieres.update' , $filiere->id)}}" method="POST">
         @csrf
         @method('PATCH')
+
   <div class="form-group">
     <label for="Designation" >Designation de la filiere</label>
     <input type="text" name="Designation" value="{{$filiere->Designation}}" class="form-control" id="Designation" aria-describedby="emailHelp" placeholder="Designation">
@@ -47,5 +64,7 @@
   </div>
 
   <button type="submit" value="Modifier la filiere" class="btn btn-primary">Submit</button>
-</form>
+</form>--}}
+
+
 </x-app-layout>
