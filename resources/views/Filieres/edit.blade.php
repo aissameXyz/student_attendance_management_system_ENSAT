@@ -30,7 +30,7 @@
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: var(--bs-gray-200)">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="assets/img/logoLAravel.png" width="80px">
+            <img src="/assets/img/logoLAravel.png" width="80px">
         </a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
@@ -52,9 +52,16 @@
                     @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                            <ul><a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a></ul>
-                        @else
-                            <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="background: var(--bs-red);">Log in</a>
+                                <ul>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a>
+                                        <button class="btn btn-light action-button" type="submit"  style="background: var(--bs-red);">Log out</button>
+
+                                    </form>
+                                </ul>
+                            @else
+                                <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="background: var(--bs-red);">Log in</a>
                             @if (Route::has('register'))
                                 <a class="btn btn-light action-button" role="button" href="{{ route('register') }}" style="background: var(--bs-red);">Register</a>
                             @endif

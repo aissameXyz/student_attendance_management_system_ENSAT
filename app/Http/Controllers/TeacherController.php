@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use App\Models\Teacher;
 use App\Models\Module;
 use Illuminate\Http\Request;
@@ -41,7 +41,9 @@ class TeacherController extends Controller
         $resp = new teacher;
         $resp->firstName =$request->firstName;
         $resp->lastName =$request->lastName;
-        $resp->user_id =$request->user_id;
+        $user_id = user::where('name','=',$request->input('firstName'))->first()->id;
+        $resp->user_id =$user_id;
+        //$resp->user_id =$request->user_id;
         $resp->module_id =$request->module_id;
         $resp->save();
         return redirect()->back()->with('status','responsable added successfully');
@@ -68,7 +70,7 @@ class TeacherController extends Controller
     {
         $teacher = teacher::findorfail($id);
         $module=Module::all();
-        
+
 
         return view('teacher\edit' , compact('teacher','module'));
     }

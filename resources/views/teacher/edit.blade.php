@@ -30,7 +30,7 @@
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: var(--bs-gray-200)">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="assets/img/logoLAravel.png" width="80px">
+            <img src="/assets/img/logoLAravel.png" width="80px">
         </a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
@@ -51,8 +51,15 @@
             <span class="navbar-text actions">
                     @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                            @auth
-                            <ul><a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a></ul>
+                               @auth
+                            <ul>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a>
+                                        <button class="btn btn-light action-button" type="submit"  style="background: var(--bs-red);">Log out</button>
+
+                                    </form>
+                                </ul>
                         @else
                             <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="background: var(--bs-red);">Log in</a>
                             @if (Route::has('register'))
@@ -65,6 +72,42 @@
         </div>
     </div>
 </nav>
+
+
+<div class="container-sm">
+    <form class="row g-3 needs-validation" novalidate method="POST" action="{{ url('teacher/'.$teacher->id) }}">
+        @csrf
+        @method('PUT')
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">First name </label>
+            <input id="name" name="firstName" type="text" class="form-control" required>
+            @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Last name</label>
+            <div class="input-group has-validation">
+                <input id="name" name="lastName" type="text" class="form-control" aria-describedby="inputGroupPrepend" required>
+            </div>
+            @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">Module</label>
+            <select name="filiere_Id" class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                @foreach($module as $fil)
+                    <option value="{{$fil->id}}">{{$fil->designation}}</option>
+                @endforeach
+            </select>
+            @error('name') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
+        </div>
+
+        <div class="col-12">
+            <a class="btn btn-primary" type="submit" href="{{ url('teacher') }}">Back</a>
+            <button class="btn btn-primary" type="submit">update</button>
+        </div>
+    </form>
+</div>
 
 
 <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>

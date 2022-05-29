@@ -51,8 +51,15 @@
             <span class="navbar-text actions">
                     @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                            @auth
-                            <ul><a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a></ul>
+                               @auth
+                            <ul>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a>
+                                        <button class="btn btn-light action-button" type="submit"  style="background: var(--bs-red);">Log out</button>
+
+                                    </form>
+                                </ul>
                         @else
                             <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="background: var(--bs-red);">Log in</a>
                             @if (Route::has('register'))

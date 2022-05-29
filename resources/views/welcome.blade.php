@@ -28,19 +28,38 @@
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Services</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Notes</a>
-                        <a class="dropdown-item" href="#">Notes</a>
-                        <a class="dropdown-item" href="#">Notes</a>
-                    </div>
-                </li>
+                @auth()
+                    @if (\Auth::user()->role == 'Admin')
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Services</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{url('students')}}"> All Students </a>
+                                <a class="dropdown-item" href="{{url('teacher')}}">All Teachers</a>
+                                <a class="dropdown-item" href="{{url('Filieres')}}">Filieres</a>
+                            </div>
+                        </li>
+                    @elseif(\Auth::user()->role == 'Admin')
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Services</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{url('students')}}"> All Students </a>
+                                <a class="dropdown-item" href="{{url('teacher')}}">All Teachers</a>
+                                <a class="dropdown-item" href="{{url('Filieres')}}">Filieres</a>
+                            </div>
+                        </li>
+                    @endif
+                @endauth
             </ul>
             <span class="navbar-text actions">
                     @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                            @auth
-                            <ul><a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a></ul>
+                              @auth
+                            <ul>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a>
+                                        <button class="btn btn-light action-button" type="submit"  style="background: var(--bs-red);">Log out</button>
+
+                                    </form>
+                                </ul>
                         @else
                             <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="background: var(--bs-red);">Log in</a>
                             @if (Route::has('register'))

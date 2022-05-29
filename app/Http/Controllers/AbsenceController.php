@@ -108,13 +108,21 @@ class AbsenceController extends Controller
         $seance_id = $id;
         $students = $teacher->module->filiere->student;
         foreach($students as $student){
-            $absence = new absence;
-            $absence->admissionNo = $student->admissionNumber;
-            $absence->status = "absent";
-            $absence->seance = $seance_id;
-            $absence->filiere_id=$teacher->module->filiere->id;
-            $absence->module_id=$teacher->module->id;
-            $absence->save();
+            if(DB::table('absences')
+            ->where('admissionNo',$student->admissionNumber)
+                ->where('seance',$seance_id)
+                ->where('module_id',$teacher->module->id)
+                ->doesntExist()
+            )
+            {
+                $absence = new absence;
+                $absence->admissionNo = $student->admissionNumber;
+                $absence->status = "absent";
+                $absence->seance = $seance_id;
+                $absence->filiere_id=$teacher->module->filiere->id;
+                $absence->module_id=$teacher->module->id;
+                $absence->save();
+            }
         }
         event(new SeanceStartingEvent($teacher,$seance_id));
 

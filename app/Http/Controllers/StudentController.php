@@ -53,22 +53,25 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+
+        /*$this->validate($request, [
             'lastName' => 'required',
             'firstName' => 'required',
             'code_ap' => 'required',
             'admissionNumber' => 'required',
-            'filiere_Id' => 'required'
-        ]);
+            'filiere_id' => 'required'
+        ]);*/
+
 
         $student = new student;
         $student->firstName = $request->input('firstName');
         $student->lastName = $request->input('lastName');
         $student->code_ap = $request->input('code_ap');
         $student->admissionNumber = $request->input('admissionNumber');
-        $student->filiere_Id = $request->input('filiere_Id');
+        $student->filiere_id = $request->input('filiere_id');
         $user_id = user::where('name','=',$request->input('firstName'))->first()->id;
         $student->user_Id = $user_id;
+
 
 
         $student->save();
@@ -109,13 +112,13 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $this->validate($request, [
             'firstName' => 'required',
             'lastName' => 'required',
             'code_ap' => 'required',
             'admissionNumber' => 'required',
-            'filiere_Id' => 'required'
+            'filiere_id' => 'required'
         ]);
 
         // //create post
@@ -124,7 +127,7 @@ class StudentController extends Controller
         $student->lastName= $request->input('lastName');
         $student->code_ap = $request->input('code_ap');
         $student->admissionNumber = $request->input('admissionNumber');
-        $student->filiere_Id = $request->input('filiere_Id');
+        $student->filiere_id = $request->input('filiere_id');
         $student->save();
 
         return redirect()->back()->with('message', 'Student updated.');
