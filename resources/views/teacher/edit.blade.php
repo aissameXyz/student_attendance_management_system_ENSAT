@@ -103,8 +103,8 @@
         </div>
 
         <div class="col-12">
-            <a class="btn btn-primary" type="submit" href="{{ url('teacher') }}">Back</a>
-            <button class="btn btn-primary" type="submit">update</button>
+            <a class="btn btn-danger" type="submit" href="{{ url('teacher') }}">Back</a>
+            <button class="btn btn-danger" type="submit">update</button>
         </div>
     </form>
 </div>

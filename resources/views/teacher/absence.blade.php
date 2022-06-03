@@ -86,15 +86,15 @@
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                 <div class="flex justify-center p-2">
-                                    <center>
-                                        <a href="{{ url('Teacher/absence/seance/1') }}" class="px-4 py-2 btn btn-danger">Séance 1</a>
-                                        <a href="{{ url('Teacher/absence/seance/2') }}" class="px-4 py-2 btn btn-danger">Séance 2</a>
-                                        <a href="{{ url('Teacher/absence/seance/3') }}" class="px-4 py-2 btn btn-danger">Séance 3</a>
-                                        <a href="{{ url('Teacher/absence/seance/4') }}" class="px-4 py-2 btn btn-danger">Séance 4</a>
-                                        <a href="{{ url('Teacher/absence/seance/5') }}" class="px-4 py-2 btn btn-danger">Séance 5</a>
-                                        <a href="{{ url('Teacher/absence/seance/6') }}" class="px-4 py-2 btn btn-danger">Séance 6</a>
-                                        <a href="{{ url('Teacher/absence/seance/7') }}" class="px-4 py-2 btn btn-danger">Séance 7</a>
-                                    </center>
+                                    <div style="text-align: center;">
+                                            <a class="btn btn-danger" href="{{ url('Teacher/absence/seance/1') }}" class="px-4 py-2 btn btn-danger">Séance 1</a>
+                                            <a class="btn btn-danger" href="{{ url('Teacher/absence/seance/2') }}" class="px-4 py-2 btn btn-danger">Séance 2</a>
+                                            <a class="btn btn-danger" href="{{ url('Teacher/absence/seance/3') }}" class="px-4 py-2 btn btn-danger">Séance 3</a>
+                                            <a class="btn btn-danger" href="{{ url('Teacher/absence/seance/4') }}" class="px-4 py-2 btn btn-danger">Séance 4</a>
+                                            <a class="btn btn-danger" href="{{ url('Teacher/absence/seance/5') }}" class="px-4 py-2 btn btn-danger">Séance 5</a>
+                                            <a class="btn btn-danger" href="{{ url('Teacher/absence/seance/6') }}" class="px-4 py-2 btn btn-danger">Séance 6</a>
+                                            <a class="btn btn-danger" href="{{ url('Teacher/absence/seance/7') }}" class="px-4 py-2 btn btn-danger">Séance 7</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

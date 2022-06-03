@@ -103,8 +103,8 @@
         </div>
 
         <div class="col-12">
-            <a class="btn btn-primary" type="submit" href="{{ route('teacher.index') }}">Back</a>
-            <button class="btn btn-primary" type="submit">Create</button>
+            <a class="btn btn-danger" type="submit" href="{{ route('teacher.index') }}">Back</a>
+            <button class="btn btn-danger" type="submit">Create</button>
         </div>
     </form>
 </div>
