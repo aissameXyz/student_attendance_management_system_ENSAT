@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
-
+    <link rel="icon" type="image/x-icon" href="../assets/img/logoLAravel.png">
     <link rel="stylesheet" href="{{assert('assets/fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('path/to/font-awesome/css/font-awesome.min.css')}}">
     <link href="{{url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet">
