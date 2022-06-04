@@ -125,10 +125,10 @@
                         <div class="col text-end"><button class="btn" type="button" style="margin: 10px;background: var(--bs-red);color: rgb(255,255,255);border-color: var(--bs-red);">More...</button></div>
                     </div>
                 </div>
-                <div class="col-md-4"><a href="" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
+                <div class="col-md-4"><a href="https://github.com/basssell" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
                     <div class="imgRedonda"><img class="imgpeque" src="assets/img/WhatsApp%20Image%202022-05-24%20at%2010.48.07.jpeg"></div>
-                    <h1 class="text-center" style="font-size: 32.52px;">Rached wass</h1>
-                    <p>Moroccan software engineer student , interested in the IT world and science in general , especially mathematics , project-conception and problem-solving .<br></p>
+                    <h1 class="text-center" style="font-size: 32.52px;">Rached Wassim Bassel</h1>
+                    <p>Élève ingénieur en première année cycle d'ingénierie informatique à l'Ecole nationale des sciences appliquées de TANGER.<br></p>
                     <div class="row">
                         <div class="col text-end"><button class="btn" type="button" style="margin: 10px;background: var(--bs-red);color: rgb(255,255,255);border-color: var(--bs-red);">More...</button></div>
                     </div>
@@ -136,16 +136,16 @@
                 <div class="col-md-4"><a href="https://github.com/amine0414" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
                     <div class="imgRedonda"><img class="imgpeque" src="assets/img/amine.jpeg"></div>
                     <h1 class="text-center" style="font-size: 32.52px;">Amine Kamoun</h1>
-                    <p> actuellement étudiant en 2e année cycle d'ingénieur à Ensa Tanger après avoir passé un cycle préparatoire de 2 ans, passionne par le monde IT et la résolution des problèmes
+                    <p>Actuellement étudiant en 2e année cycle d'ingénieur à Ensa Tanger après avoir passé un cycle préparatoire de 2 ans, passionne par le monde IT et la résolution des problèmes
                         la contribution à ce projet est une autre expérience parmi les expériences de mon parcour académique à Ensat.<br></p>
                     <div class="row">
                         <div class="col text-end"><button class="btn" type="button" style="margin: 10px;background: var(--bs-red);color: rgb(255,255,255);border-color: var(--bs-red);">More...</button></div>
                     </div>
                 </div>
-                <div class="col-md-4"><a href="" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
+                <div class="col-md-4"><a href="https://github.com/bilal-mesaouri" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
                     <div class="imgRedonda"><img class="imgpeque" src="assets/img/bilal.jpeg"></div>
-                    <h1 class="text-center" style="font-size: 32.52px;">Bilal</h1>
-                    <p>Moroccan software engineer student , interested in the IT world and science in general , especially mathematics , project-conception and problem-solving .<br></p>
+                    <h1 class="text-center" style="font-size: 32.52px;">Mesaouri Deboun Bilal</h1>
+                    <p>Je m'appelle Bilal Je suis un étudiant ingénieur dans Ensa Tanger 1ère année génie informatique membre du club Ensat presse, passionné par la programmation et le développement web.<br></p>
                     <div class="row">
                         <div class="col text-end"><button class="btn" type="button" style="margin: 10px;background: var(--bs-red);color: rgb(255,255,255);border-color: var(--bs-red);">More...</button></div>
                     </div>
