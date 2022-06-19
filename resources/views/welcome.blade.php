@@ -21,7 +21,7 @@
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: var(--bs-gray-200)">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="assets/img/logoLAravel.png" width="80px">
+            <img src="assets/img/hodori.png" width="100px">
         </a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
@@ -74,7 +74,7 @@
 </nav>
 
 <div class="text-center" data-aos="zoom-in" data-aos-duration="750">
-    <h1 style="margin-bottom: 61px;color: var(--bs-red);">Who We Are</h1>
+    <h1 style="margin-bottom: 61px;color: var(--bs-red);">Qui Somme Nous?</h1>
 </div>
 
 <div style="margin: 50px;">
@@ -100,10 +100,11 @@
     <div class="text-center">
         <div class="container sombra borderedondo" data-aos="fade">
             <div class="row">
-                <div class="col-md-4"><a href="https://github.com/Ashraf-Khabar" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
-                    <div class="imgRedonda"><img class="imgpeque" src="assets/img/IMG-20211112-WA0022.jpg"></div>
-                    <h1 class="text-center" style="font-size: 32.52px;">Achraf Khabar</h1>
-                    <p>Moroccan software engineer student , interested in the IT world and science in general , especially mathematics , project-conception and problem-solving .<br></p>
+                <div class="col-md-4"><a href="https://github.com/aissameXyz" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
+                    <div class="imgRedonda"><img class="imgpeque" src="assets/img/1625056698700.jpg"></div>
+                    <h1 class="text-center" style="font-size: 32.52px;">Boukhallad Aissame</h1>
+                    <p>
+                        étudiant ingénieure filière génie informatique à l'ENSA de Tanger.Data Enthusiast, et passionné par les technologies IT.Ce etait une chance d'acquérir plus d'expérience en tant que, manager projets, aussi m'avait aidé pour se développer techniquement et personnellement.<br></p>
                     <div class="row">
                         <div class="col text-end"><button class="btn" type="button" style="margin: 10px;background: var(--bs-red);color: rgb(255,255,255);border-color: var(--bs-red);">More...</button></div>
                     </div>
@@ -116,11 +117,11 @@
                         <div class="col text-end"><button class="btn" type="button" style="margin: 10px;background: var(--bs-red);color: rgb(255,255,255);border-color: var(--bs-red);">More...</button></div>
                     </div>
                 </div>
-                <div class="col-md-4"><a href="https://github.com/aissameXyz" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
-                    <div class="imgRedonda"><img class="imgpeque" src="assets/img/1625056698700.jpg"></div>
-                    <h1 class="text-center" style="font-size: 32.52px;">Boukhallad Aissame</h1>
-                    <p>
-                        étudiant ingénieure filière génie informatique à l'ENSA de Tanger.Data Enthusiast, et passionné par les technologies IT.Ce etait une chance d'acquérir plus d'expérience en tant que, manager projets, aussi m'avait aidé pour se développer techniquement et personnellement.<br></p>
+                
+                <div class="col-md-4"><a href="https://github.com/Ashraf-Khabar" style="color: #dc3545"><i class="bi bi-github border-dark" style="font-size: 35px;margin: 10px; "></i></a>
+                    <div class="imgRedonda"><img class="imgpeque" src="assets/img/IMG-20211112-WA0022.jpg"></div>
+                    <h1 class="text-center" style="font-size: 32.52px;">Achraf Khabar</h1>
+                    <p>Moroccan software engineer student , interested in the IT world and science in general , especially mathematics , project-conception and problem-solving .<br></p>
                     <div class="row">
                         <div class="col text-end"><button class="btn" type="button" style="margin: 10px;background: var(--bs-red);color: rgb(255,255,255);border-color: var(--bs-red);">More...</button></div>
                     </div>

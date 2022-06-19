@@ -28,7 +28,13 @@ class AdminSeeder extends Seeder
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role'=>'Admin',
            ]);
-
+     User::create([
+            'name' => 'root',
+             'email' => 'root@gmail.com',
+             'email_verified_at' => now(),
+             'password' => 'root123@', // password
+             'role'=>'Admin',
+            ]);
         User::create([
             'name' => 'Amechnoue',
             'email' => 'kamechnoue@gmail.com',
