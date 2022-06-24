@@ -27,7 +27,7 @@
     @if($message = Session::get('success'))
     <p>{{$message}}</p>
     @endif
-    <a href="{{route('Modules.create')}}">Creer une module</a>
+    <a href="{{route('Modules.create')}}">Créer une module</a>
     <table class="table table-dark">
   <thead class="thead-dark">
     <tr>

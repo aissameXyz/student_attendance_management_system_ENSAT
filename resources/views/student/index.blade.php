@@ -56,9 +56,10 @@
                             <ul>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a>
-                                        <button class="btn btn-light action-button" type="submit"  style="background: var(--bs-red);">Log out</button>
-
+                                        <button href="{{ url('/dashboard') }}" style="width:150px; height:40px; background-color:#ed009c; border-radius:20px; "><a  style="text-decoration:none; color:white; font-weight:bold;" >tableau de bord</a>
+                                         </button>
+                                         <button type="submit" style="width:135px; height:40px; background-color:#ed009c; border-radius:20px; color:white; font-weight:bold;"> Se Déconnecter
+                                         </button>
                                     </form>
                                 </ul>
                         @else

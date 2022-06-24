@@ -31,7 +31,7 @@
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: var(--bs-gray-200)">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="assets/img/logoLAravel.png" width="80px">
+            <img src="assets/img/hodori.png" width="100px">
         </a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
@@ -53,7 +53,9 @@
                     @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                            <ul><a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a></ul>
+                            <button href="{{ url('/dashboard') }}" style="width:150px; height:40px; background-color:#ed009c; border-radius:20px; "><a  style="text-decoration:none; color:white; font-weight:bold;" >tableau de bord</a>
+                                         </button>
+                                
                         @else
                             <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="background: var(--bs-red);">Log in</a>
                             @if (Route::has('register'))

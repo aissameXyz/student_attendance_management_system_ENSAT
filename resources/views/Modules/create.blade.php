@@ -24,7 +24,7 @@
 
 
 <body>
-    <h1>CREATE Module</h1>
+    <h1>Ajouter un module</h1>
     @if($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -37,16 +37,16 @@
     <form action="{{route('Modules.store')}}" method="POST">
         @csrf
   <div class="form-group">
-    <label for="Designation" >Designation de la module</label>
+    <label for="Designation" >Designation du module</label>
     <input type="text" name="Designation" class="form-control" id="Designation" aria-describedby="emailHelp" placeholder="Designation">
   </div>
 
   <div class="form-group">
-    <label for="filiere_id">Filiere id</label>
+    <label for="filiere_id">ID du Filiere</label>
     <input type="text" name="filiere_id" class="form-control" id="filiere_id" placeholder="Password">
   </div>
 
-  <button type="submit" value="creer un module" class="btn btn-primary">Submit</button>
+  <button type="submit" value="creer un module" class="btn btn-primary">Confirmer</button>
 </form>
 </body>
 

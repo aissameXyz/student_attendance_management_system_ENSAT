@@ -51,11 +51,11 @@
             <span class="navbar-text actions">
                     @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                              @auth
+                            @auth
                             <ul>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <button style="width:150px; height:40px; background-color:#ed009c; border-radius:20px; "><a  style="text-decoration:none; color:white; font-weight:bold;" href="href="{{ url('/dashboard') }}">tableau de bord</a>
+                                        <button href="{{ url('/dashboard') }}" style="width:150px; height:40px; background-color:#ed009c; border-radius:20px; "><a  style="text-decoration:none; color:white; font-weight:bold;" >tableau de bord</a>
                                          </button>
                                          <button type="submit" style="width:135px; height:40px; background-color:#ed009c; border-radius:20px; color:white; font-weight:bold;"> Se Déconnecter
                                          </button>
@@ -63,7 +63,7 @@
 
                                     </form>
                                 </ul>
-                        @else
+                    @else
                             <a class="btn btn-light action-button" role="button" href="{{ route('login') }}" style="background: var(--bs-red);">Log in</a>
                             @if (Route::has('register'))
                                 <a class="btn btn-light action-button" role="button" href="{{ route('register') }}" style="background: var(--bs-red);">Register</a>
@@ -81,9 +81,9 @@
                 </div>
             <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
                 <div class="mb-16 lg:mt-32 xl:mt-40 xl:mr-12">
-                    <h1 class="h1-large mb-5">Team management mobile application</h1>
-                    <p class="p-large mb-8">Start getting things done together with your team based on Pavo's revolutionary team management features</p>
-                    <button style="width:120px; height:40px; background-color:#ed009c; border-radius:20px; "><a  style="text-decoration:none; color:white; font-weight:bold;" href="https://github.com/aissameXyz/student_attendance_management_system_ENSAT.git">Code Source</a>
+                    <h1 class="h1-large mb-5">Application de gestion des absences </h1>
+                    <p class="p-large mb-8">Avec les progrès technologiques, il est désormais possible de se doter de plusieurs outils pour faciliter la vie des proffesseurs aux etablissements. Cette application de gestion des absences est une application web open source que vous pourrez acquérir pour automatiser la planification des périodes d’absence des membres du étudiant de votre etablissements.</p>
+                    <button style="width:120px; height:40px; background-color:#ed009c; border-radius:20px; md-6 "><a  style="text-decoration:none; color:white; font-weight:bold;" href="https://github.com/aissameXyz/student_attendance_management_system_ENSAT.git">Code Source</a>
                     </button>
                 </div>
                
@@ -173,6 +173,53 @@
         </div>
     </div>
 </div>
+<footer class="border-t border-gray-200; margin: 50px;">
+      <div
+        class="
+          container
+          flex flex-col flex-wrap
+          px-4
+          py-16
+          mx-auto
+          md:items-center
+          lg:items-start
+          md:flex-row md:flex-nowrap
+        "
+      >
+        <div
+          class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left"
+        >
+          <a
+            class="
+              flex
+              items-center
+              justify-center
+              text-4xl
+              font-bold
+              text-blue-700
+              md:justify-start
+            "
+          >
+          <img src="assets/img/hodori.png" width="100px">
+          </a>
+          <p class="mt-2 text-sm text-gray-500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+            at sequi cum, impedit fuga in placeat illo eum minima possimus est
+            perferendis distinctio explicabo eos natus consequuntur blanditiis
+            odio optio?
+          </p>
+        
+        
+          
+        </div>
+      </div>
+      <div class="flex justify-center text-center" >
+        <p class="text-base text-gray-400">
+          Made with ❤️ ©️ 2022 ENSAT Students
+        </p>
+      </div>
+    </footer>
+    
 
 
 <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
