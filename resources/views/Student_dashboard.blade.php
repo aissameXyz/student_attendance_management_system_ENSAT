@@ -21,7 +21,7 @@
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: var(--bs-gray-200)">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="assets/img/logoLAravel.png" width="80px">
+            <img src="assets/img/hodori.png" width="100px">
         </a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
@@ -74,7 +74,7 @@
 </nav>
 
 <div class="text-center" data-aos="zoom-in" data-aos-duration="750">
-    <h1 style="margin-bottom: 61px;color: var(--bs-red);">Who We Are</h1>
+    <h1 style="margin-bottom: 61px;color: var(--bs-red);">Qui somme nous?</h1>
 </div>
 
 <div style="margin: 50px;">
