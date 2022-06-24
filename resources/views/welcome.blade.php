@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
-    <link rel="icon" type="image/x-icon" href="../assets/img/logoLAravel.png">
+    <link rel="icon" type="image/x-icon" href="../assets/img/hodori.png">
     <link rel="stylesheet" href="{{assert('assets/fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('path/to/font-awesome/css/font-awesome.min.css')}}">
     <link href="{{url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -55,8 +55,11 @@
                             <ul>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <a class="btn btn-light action-button" role="button" href="{{ url('/dashboard') }}" style="background: var(--bs-red);">Dashboard</a>
-                                        <button class="btn btn-light action-button" type="submit"  style="background: var(--bs-red);">Log out</button>
+                                        <button style="width:150px; height:40px; background-color:#ed009c; border-radius:20px; "><a  style="text-decoration:none; color:white; font-weight:bold;" href="href="{{ url('/dashboard') }}">tableau de bord</a>
+                                         </button>
+                                         <button type="submit" style="width:135px; height:40px; background-color:#ed009c; border-radius:20px; color:white; font-weight:bold;"> Se Déconnecter
+                                         </button>
+                                       
 
                                     </form>
                                 </ul>
@@ -72,6 +75,20 @@
         </div>
     </div>
 </nav>
+        <header id="header" class="header py-28 text-center md:pt-36 lg:text-left xl:pt-44 xl:pb-32">
+                <div class="xl:text-right">
+                    <img class="inline" src="assets/img/hodori.png"" alt="img" />
+                </div>
+            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+                <div class="mb-16 lg:mt-32 xl:mt-40 xl:mr-12">
+                    <h1 class="h1-large mb-5">Team management mobile application</h1>
+                    <p class="p-large mb-8">Start getting things done together with your team based on Pavo's revolutionary team management features</p>
+                    <button style="width:120px; height:40px; background-color:#ed009c; border-radius:20px; "><a  style="text-decoration:none; color:white; font-weight:bold;" href="https://github.com/aissameXyz/student_attendance_management_system_ENSAT.git">Code Source</a>
+                    </button>
+                </div>
+               
+            </div> <!-- end of container src="assets/img/header-smartphone.png"-->
+        </header>
 
 <div class="text-center" data-aos="zoom-in" data-aos-duration="750">
     <h1 style="margin-bottom: 61px;color: var(--bs-red);">Qui Somme Nous?</h1>
@@ -157,61 +174,6 @@
     </div>
 </div>
 
-<footer class="text-center bg-gray-900 text-black">
-  <div class="container px-6 pt-6">
-    
-
-    <div>
-      <form action="">
-        <div class="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
-          <div class="md:ml-auto md:mb-6">
-            <p class="">
-              <strong>Demandez votre demo!</strong>
-            </p>
-          </div>
-
-          <div class="md:mb-6">
-            <input
-              type="text"
-              class="
-                form-control
-                block
-                w-full
-                px-3
-                py-1.5
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-              "
-              id="exampleFormControlInput1"
-              placeholder="Email address"/>
-          </div>
-
-          <div class="md:mr-auto mb-8">
-            <button type="submit" class="mb-4 inline-block px-6 py-2 border-2 border-grey text-black font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
-              Demander
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-
-
-
-    
-
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-    Made with ❤️ © 2022, ENSAT
-    <a class="text-black" >7odori</a>
-  </div>
-</footer>
 
 <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/js/bs-init.js')}}"></script>
